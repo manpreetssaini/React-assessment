@@ -1,0 +1,12 @@
+.main-header {
+	justify-content: space-between;
+	color: white;
+}
+
+.main-header form {
+	display: flex;
+}
+
+.main-header form button {
+	margin-left: .8rem;
+}
