@@ -7,11 +7,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { pokemon: null };
+    this.search = this.search.bind(this);
   }
 
-  search = async (pokemonName) => {
+  search(pokemonName) {
     // TODO: Get pokemon searched for and set it as the state of `pokemon`
     // Feel free to refer to your pokédex assignment
+    let url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
     return ;
   }
 
