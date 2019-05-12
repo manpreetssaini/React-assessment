@@ -11,11 +11,13 @@ class MainHeader extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.props.onSubmit(this.state.pokemonName);
     // TODO: Call this.props.onSubmit
   };
 
-  handlePokemonNameChange = (event) {
+  handlePokemonNameChange = (event) => {
     // TODO: Set the state of `pokemonName` to `event.target.value`
+    this.setState({pokemonName: event.target.value});
   };
 
   render() {
@@ -26,11 +28,9 @@ class MainHeader extends React.Component {
         dark
         expand
       >
-        <h1>{/* TODO: Display heading prop */}</h1>
-
-        {/* TODO: onSubmit prop */}
-        <Form>
-          {/* TODO: <Input /> */}
+        <h1>{this.props.heading}</h1>
+        <Form onSubmit={this.handleSubmit}>
+          <input onChange={this.handlePokemonNameChange}/>
           <Button type="submit" color="info">Search</Button>
         </Form>
       </Navbar>
